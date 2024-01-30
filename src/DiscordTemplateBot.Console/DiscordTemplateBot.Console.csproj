@@ -22,7 +22,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\DiscordTemplateBot.Logging\DiscordTemplateBot.Logging.csproj" />
+      <ProjectReference Include="..\DiscordTemplateBot.DiscordBotConfiguration\DiscordTemplateBot.DiscordBotConfiguration.csproj" />
     </ItemGroup>
 
 </Project>
