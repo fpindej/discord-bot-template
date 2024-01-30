@@ -1,4 +1,5 @@
 ﻿using Discord;
+using DiscordTemplateBot.Commands.Extensions;
 using DiscordTemplateBot.Console.Extensions;
 using DiscordTemplateBot.DiscordBotConfiguration;
 using DiscordTemplateBot.DiscordBotConfiguration.Extensions;
@@ -18,6 +19,7 @@ using var host = Host.CreateDefaultBuilder(args)
     {
         var discordLogSeverity = GetDiscordLogSeverity(builder.Configuration);
         services.AddDiscordBotConfiguration(discordLogSeverity);
+        services.AddDiscordCommands(discordLogSeverity);
     })
     .Build();
 
