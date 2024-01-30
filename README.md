@@ -13,6 +13,15 @@ The entire focus of the project is to create a usable template by anyone who jus
 - Discord account and server (guild)
     - to test the actual bot
 
+## Usage
+
+1. use this repository as a [template repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template)
+2. in Your new repository:
+   - rename solution
+   - rename projects prefixes (or remove those)
+   - use full text search on the entire solution and look for `DiscordTemplateBot` -> change all occurences to what You need
+   - try running the project
+   - if everything works -> commit and You're good to go 🎉
 
 ## Features
 - running as a service using the [.NET generic host](https://learn.microsoft.com/en-us/dotnet/core/extensions/generic-host)
