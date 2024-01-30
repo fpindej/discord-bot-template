@@ -1,9 +1,9 @@
-﻿using DiscordTemplateBot.Logging;
+﻿using Logging;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Serilog;
 
-namespace DiscordTemplateBot.Console.Extensions;
+namespace ConsoleApp.Extensions;
 
 internal static class HostBuilderExtensions
 {

@@ -1,6 +1,6 @@
 ﻿using Discord.Interactions;
 
-namespace DiscordTemplateBot.Commands.Modules;
+namespace Discord.Commands.Modules;
 
 public sealed class TestModule : InteractionModuleBase<SocketInteractionContext>
 {

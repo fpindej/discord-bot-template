@@ -1,9 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using Discord;
 
-namespace DiscordTemplateBot.DiscordBotConfiguration;
+namespace Discord.BotConfiguration;
 
-public sealed class DiscordBotConfiguration
+public sealed class BotConfiguration
 {
     public const string SectionName = "DiscordBotConfiguration";
 

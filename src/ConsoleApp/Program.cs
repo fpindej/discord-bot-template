@@ -1,8 +1,8 @@
 ﻿using Discord;
-using DiscordTemplateBot.Commands.Extensions;
-using DiscordTemplateBot.Console.Extensions;
-using DiscordTemplateBot.DiscordBotConfiguration;
-using DiscordTemplateBot.DiscordBotConfiguration.Extensions;
+using Discord.Commands.Extensions;
+using ConsoleApp.Extensions;
+using Discord.BotConfiguration;
+using Discord.BotConfiguration.Extensions;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 
@@ -28,6 +28,6 @@ return;
 
 LogSeverity GetDiscordLogSeverity(IConfiguration configuration)
 {
-    return configuration.GetSection(DiscordBotConfiguration.SectionName)
-        .Get<DiscordBotConfiguration>()!.LogLevel;
+    return configuration.GetSection(BotConfiguration.SectionName)
+        .Get<BotConfiguration>()!.LogLevel;
 }
