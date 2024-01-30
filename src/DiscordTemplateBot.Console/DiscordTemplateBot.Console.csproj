@@ -22,6 +22,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\DiscordTemplateBot.Commands\DiscordTemplateBot.Commands.csproj" />
       <ProjectReference Include="..\DiscordTemplateBot.DiscordBotConfiguration\DiscordTemplateBot.DiscordBotConfiguration.csproj" />
     </ItemGroup>
 

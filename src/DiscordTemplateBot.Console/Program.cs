@@ -1,4 +1,7 @@
-﻿using DiscordTemplateBot.Console.Extensions;
+﻿using Discord;
+using DiscordTemplateBot.Commands.Extensions;
+using DiscordTemplateBot.Console.Extensions;
+using DiscordTemplateBot.DiscordBotConfiguration;
 using DiscordTemplateBot.DiscordBotConfiguration.Extensions;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
@@ -14,8 +17,17 @@ using var host = Host.CreateDefaultBuilder(args)
     })
     .ConfigureServices((builder, services) =>
     {
-        services.AddDiscordBotConfiguration(builder.Configuration);
+        var discordLogSeverity = GetDiscordLogSeverity(builder.Configuration);
+        services.AddDiscordBotConfiguration(discordLogSeverity);
+        services.AddDiscordCommands(discordLogSeverity);
     })
     .Build();
 
 await host.RunAsync();
+return;
+
+LogSeverity GetDiscordLogSeverity(IConfiguration configuration)
+{
+    return configuration.GetSection(DiscordBotConfiguration.SectionName)
+        .Get<DiscordBotConfiguration>()!.LogLevel;
+}
