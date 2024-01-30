@@ -4,6 +4,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiscordTemplateBot.Console"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "host", "host", "{49893B13-A4C3-4553-A638-2C0EF20757FA}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "utils", "utils", "{60AE3E2B-ADAF-4A66-B113-62BBE6ED1986}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiscordTemplateBot.Logging", "DiscordTemplateBot.Logging\DiscordTemplateBot.Logging.csproj", "{DE5F7FE9-B279-44DA-BCAF-E25DA1FAA24B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -14,8 +18,13 @@ Global
 		{A4799F67-EA68-4AFA-834A-266CCA3F0837}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A4799F67-EA68-4AFA-834A-266CCA3F0837}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A4799F67-EA68-4AFA-834A-266CCA3F0837}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE5F7FE9-B279-44DA-BCAF-E25DA1FAA24B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE5F7FE9-B279-44DA-BCAF-E25DA1FAA24B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE5F7FE9-B279-44DA-BCAF-E25DA1FAA24B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE5F7FE9-B279-44DA-BCAF-E25DA1FAA24B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{A4799F67-EA68-4AFA-834A-266CCA3F0837} = {49893B13-A4C3-4553-A638-2C0EF20757FA}
+		{DE5F7FE9-B279-44DA-BCAF-E25DA1FAA24B} = {60AE3E2B-ADAF-4A66-B113-62BBE6ED1986}
 	EndGlobalSection
 EndGlobal
