@@ -8,6 +8,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "utils", "utils", "{60AE3E2B
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiscordTemplateBot.Logging", "DiscordTemplateBot.Logging\DiscordTemplateBot.Logging.csproj", "{DE5F7FE9-B279-44DA-BCAF-E25DA1FAA24B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "app", "app", "{DAD22713-BBC5-4422-A63E-B963C7EA988D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "discordBot", "discordBot", "{E32F56B7-9336-4CB9-9F8F-0069A0208118}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiscordTemplateBot.DiscordBotConfiguration", "DiscordTemplateBot.DiscordBotConfiguration\DiscordTemplateBot.DiscordBotConfiguration.csproj", "{1CC86837-5FDB-4E0D-9B2B-A7A596337888}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -22,9 +28,15 @@ Global
 		{DE5F7FE9-B279-44DA-BCAF-E25DA1FAA24B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DE5F7FE9-B279-44DA-BCAF-E25DA1FAA24B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DE5F7FE9-B279-44DA-BCAF-E25DA1FAA24B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1CC86837-5FDB-4E0D-9B2B-A7A596337888}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CC86837-5FDB-4E0D-9B2B-A7A596337888}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CC86837-5FDB-4E0D-9B2B-A7A596337888}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CC86837-5FDB-4E0D-9B2B-A7A596337888}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{A4799F67-EA68-4AFA-834A-266CCA3F0837} = {49893B13-A4C3-4553-A638-2C0EF20757FA}
 		{DE5F7FE9-B279-44DA-BCAF-E25DA1FAA24B} = {60AE3E2B-ADAF-4A66-B113-62BBE6ED1986}
+		{E32F56B7-9336-4CB9-9F8F-0069A0208118} = {DAD22713-BBC5-4422-A63E-B963C7EA988D}
+		{1CC86837-5FDB-4E0D-9B2B-A7A596337888} = {E32F56B7-9336-4CB9-9F8F-0069A0208118}
 	EndGlobalSection
 EndGlobal
