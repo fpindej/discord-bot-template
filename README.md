@@ -24,12 +24,12 @@ The entire focus of the project is to create a usable template by anyone who jus
 
 ### Running the project
 
-1. Clone the repository
-2. Setup Discord bot token
+1. clone the repository
+2. setup Discord bot token
     - open the `appsettings.json` 
     - locate the `DiscordBotConfiguration` section
     - locate the `Token` field and fill in Your Discord bot token
-3. Run the project
+3. run the project
     - choose the appropriate launch configuration
     - hit the run button in Your IDE or use the command:
     ```bash
