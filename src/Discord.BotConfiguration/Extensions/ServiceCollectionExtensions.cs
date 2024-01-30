@@ -1,17 +1,16 @@
-﻿using Discord;
+﻿using Discord.BotConfiguration.Services;
 using Discord.WebSocket;
-using DiscordTemplateBot.DiscordBotConfiguration.Services;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace DiscordTemplateBot.DiscordBotConfiguration.Extensions;
+namespace Discord.BotConfiguration.Extensions;
 
 public static class ServiceCollectionExtensions
 {
     public static IServiceCollection AddDiscordBotConfiguration(this IServiceCollection services,
         LogSeverity logSeverity)
     {
-        services.AddOptions<DiscordBotConfiguration>()
-            .BindConfiguration(DiscordBotConfiguration.SectionName)
+        services.AddOptions<BotConfiguration>()
+            .BindConfiguration(BotConfiguration.SectionName)
             .ValidateDataAnnotations()
             .ValidateOnStart();
 

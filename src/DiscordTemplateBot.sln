@@ -1,20 +1,20 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiscordTemplateBot.Console", "DiscordTemplateBot.Console\DiscordTemplateBot.Console.csproj", "{A4799F67-EA68-4AFA-834A-266CCA3F0837}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp", "ConsoleApp\ConsoleApp.csproj", "{A4799F67-EA68-4AFA-834A-266CCA3F0837}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "host", "host", "{49893B13-A4C3-4553-A638-2C0EF20757FA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "utils", "utils", "{60AE3E2B-ADAF-4A66-B113-62BBE6ED1986}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiscordTemplateBot.Logging", "DiscordTemplateBot.Logging\DiscordTemplateBot.Logging.csproj", "{DE5F7FE9-B279-44DA-BCAF-E25DA1FAA24B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logging", "Logging\Logging.csproj", "{DE5F7FE9-B279-44DA-BCAF-E25DA1FAA24B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "app", "app", "{DAD22713-BBC5-4422-A63E-B963C7EA988D}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "discordBot", "discordBot", "{E32F56B7-9336-4CB9-9F8F-0069A0208118}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "discord", "discord", "{E32F56B7-9336-4CB9-9F8F-0069A0208118}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiscordTemplateBot.DiscordBotConfiguration", "DiscordTemplateBot.DiscordBotConfiguration\DiscordTemplateBot.DiscordBotConfiguration.csproj", "{1CC86837-5FDB-4E0D-9B2B-A7A596337888}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Discord.BotConfiguration", "Discord.BotConfiguration\Discord.BotConfiguration.csproj", "{1CC86837-5FDB-4E0D-9B2B-A7A596337888}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiscordTemplateBot.Commands", "DiscordTemplateBot.Commands\DiscordTemplateBot.Commands.csproj", "{FFCD3EC2-5B1F-4016-8611-9E43146929CA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Discord.Commands", "Discord.Commands\Discord.Commands.csproj", "{FFCD3EC2-5B1F-4016-8611-9E43146929CA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -2,7 +2,7 @@
 using Serilog;
 using Serilog.Events;
 
-namespace DiscordTemplateBot.Logging;
+namespace Logging;
 
 public static class LogHelper
 {

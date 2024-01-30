@@ -1,11 +1,9 @@
-﻿using Discord;
-using Discord.Commands;
+﻿using Discord.Commands.Services;
 using Discord.Interactions;
 using Discord.WebSocket;
-using DiscordTemplateBot.Commands.Services;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace DiscordTemplateBot.Commands.Extensions;
+namespace Discord.Commands.Extensions;
 
 public static class ServiceCollectionExtensions
 {

@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Serilog;
 
-namespace DiscordTemplateBot.Logging;
+namespace Logging;
 
 public static class LoggerConfigurationHelper
 {

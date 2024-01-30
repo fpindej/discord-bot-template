@@ -1,12 +1,11 @@
 ﻿using System.Reflection;
-using Discord;
 using Discord.Interactions;
 using Discord.WebSocket;
-using DiscordTemplateBot.Logging;
+using Logging;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace DiscordTemplateBot.Commands.Services;
+namespace Discord.Commands.Services;
 
 public sealed class InteractionHandlingService : IHostedService
 {
@@ -72,7 +71,7 @@ public sealed class InteractionHandlingService : IHostedService
     }
 
     private Task SlashCommandExecutedAsync(SlashCommandInfo commandInfo, IInteractionContext interactionContext,
-        IResult result)
+        Interactions.IResult result)
     {
         _logger.LogInformation("Slash command executed: {CommandName}. Server: {Server}. User: {User}",
             commandInfo.Name, interactionContext.Guild?.Name, interactionContext.User?.Username);
@@ -80,7 +79,7 @@ public sealed class InteractionHandlingService : IHostedService
     }
 
     private Task ComponentCommandExecutedAsync(ComponentCommandInfo commandInfo, IInteractionContext interactionContext,
-        IResult result)
+        Interactions.IResult result)
     {
         _logger.LogInformation("Component command executed: {CommandName}. Server: {Server}. User: {User}",
             commandInfo.Name, interactionContext.Guild?.Name, interactionContext.User?.Username);
@@ -88,7 +87,7 @@ public sealed class InteractionHandlingService : IHostedService
     }
 
     private Task ContextCommandExecutedAsync(ContextCommandInfo commandInfo, IInteractionContext interactionContext,
-        IResult result)
+        Interactions.IResult result)
     {
         _logger.LogInformation("Context command executed: {CommandName}. Server: {Server}. User: {User}",
             commandInfo.Name, interactionContext.Guild?.Name, interactionContext.User?.Username);

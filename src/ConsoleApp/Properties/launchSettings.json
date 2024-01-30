@@ -1,13 +1,13 @@
 ﻿{
   "$schema": "http://json.schemastore.org/launchsettings.json",
   "profiles": {
-    "DiscordTemplateBot.Console.Development": {
+    "Host.ConsoleApp.Development": {
       "commandName": "Project",
       "environmentVariables": {
         "DOTNET_ENVIRONMENT": "Development"
       }
     },
-    "DiscordTemplateBot.Console.Production": {
+    "Host.ConsoleApp.Production": {
       "commandName": "Project",
       "environmentVariables": {
         "DOTNET_ENVIRONMENT": "Production"

@@ -1,11 +1,10 @@
-﻿using Discord;
-using Discord.WebSocket;
-using DiscordTemplateBot.Logging;
+﻿using Discord.WebSocket;
+using Logging;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
-namespace DiscordTemplateBot.DiscordBotConfiguration.Services;
+namespace Discord.BotConfiguration.Services;
 
 public sealed class DiscordBotStartupService : IHostedService
 {
@@ -14,7 +13,7 @@ public sealed class DiscordBotStartupService : IHostedService
     private readonly string _clientToken;
 
     public DiscordBotStartupService(DiscordSocketClient client, ILogger<DiscordBotStartupService> logger,
-        IOptions<DiscordBotConfiguration> discordBotConfiguration)
+        IOptions<BotConfiguration> discordBotConfiguration)
     {
         _client = client ?? throw new ArgumentNullException(nameof(client));
         _logger = logger ?? throw new ArgumentNullException(nameof(logger));
