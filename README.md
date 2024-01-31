@@ -16,10 +16,13 @@ The entire focus of the project is to create a usable template by anyone who jus
 ## Usage
 
 1. use this repository as a [template repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template)
-2. in Your new repository:
-   - rename solution
-   - try running the project
-   - if everything works -> commit and You're good to go 🎉
+2. rename solution
+3. rewrite README.md file
+4. adjust configurations in `Discord.BotConfiguration -> ServiceCollectionExtensions -> GetDiscordSocketConfig` to Your needs
+5. adjust configurations in `Discord.Commands -> ServiceCollectionExtensions -> GetCommandServiceConfig` to Your needs
+6. try running the project
+
+If everything works -> commit and You're good to go 🎉
 
 ## Features
 - running as a service using the [.NET generic host](https://learn.microsoft.com/en-us/dotnet/core/extensions/generic-host)
