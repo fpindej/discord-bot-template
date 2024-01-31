@@ -30,13 +30,18 @@ public static class ServiceCollectionExtensions
     private static IServiceCollection AddDiscordCommandService(this IServiceCollection services,
         LogSeverity logSeverity)
     {
-        var config = new CommandServiceConfig
-        {
-            DefaultRunMode = Discord.Commands.RunMode.Async,
-            LogLevel = logSeverity
-        };
+        var config = GetCommandServiceConfig(logSeverity);
         services.AddSingleton(_ => new CommandService(config));
 
         return services;
+    }
+
+    private static CommandServiceConfig GetCommandServiceConfig(LogSeverity logSeverity)
+    {
+        return new CommandServiceConfig
+        {
+            DefaultRunMode = RunMode.Async,
+            LogLevel = logSeverity
+        };
     }
 }
