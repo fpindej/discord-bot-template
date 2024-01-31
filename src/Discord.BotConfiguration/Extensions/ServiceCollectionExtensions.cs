@@ -23,15 +23,21 @@ public static class ServiceCollectionExtensions
     private static IServiceCollection AddDiscordSocketClient(this IServiceCollection services,
         LogSeverity logSeverity)
     {
-        var config = new DiscordSocketConfig
-        {
-            GatewayIntents = GatewayIntents.All,
-            LogGatewayIntentWarnings = false,
-            AlwaysDownloadUsers = true,
-            LogLevel = logSeverity
-        };
+        var config = GetDiscordSocketConfig(logSeverity);
         services.AddSingleton(_ => new DiscordSocketClient(config));
 
         return services;
+    }
+    
+    private static DiscordSocketConfig GetDiscordSocketConfig(LogSeverity logSeverity)
+    {
+        return new DiscordSocketConfig
+        {
+            GatewayIntents = GatewayIntents.AllUnprivileged,
+            LogGatewayIntentWarnings = false,
+            UseInteractionSnowflakeDate = false,
+            AlwaysDownloadUsers = true,
+            LogLevel = logSeverity
+        };
     }
 }
