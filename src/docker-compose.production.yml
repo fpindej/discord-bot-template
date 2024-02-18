@@ -1,0 +1,10 @@
+﻿version: '3.9'
+name: discord-bot-production
+services:
+  host:
+    image: discordbot_production
+    build:
+      context: .
+      dockerfile: ConsoleApp/Dockerfile
+    environment:
+      - DOTNET_ENVIRONMENT=Production

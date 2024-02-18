@@ -26,4 +26,10 @@
       <ProjectReference Include="..\Discord.BotConfiguration\Discord.BotConfiguration.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Content Include="..\.dockerignore">
+        <Link>.dockerignore</Link>
+      </Content>
+    </ItemGroup>
+
 </Project>
