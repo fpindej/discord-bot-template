@@ -1,0 +1,10 @@
+﻿version: '3.9'
+name: discord-bot-development
+services:
+  host:
+    image: discordbot_development
+    build:
+      context: .
+      dockerfile: ConsoleApp/Dockerfile
+    environment:
+      - DOTNET_ENVIRONMENT=Development
