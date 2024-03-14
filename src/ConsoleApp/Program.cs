@@ -1,7 +1,5 @@
-﻿using Discord;
-using Discord.Commands.Extensions;
+﻿using Discord.Commands.Extensions;
 using ConsoleApp.Extensions;
-using Discord.BotConfiguration;
 using Discord.BotConfiguration.Extensions;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
@@ -17,17 +15,10 @@ using var host = Host.CreateDefaultBuilder(args)
     })
     .ConfigureServices((builder, services) =>
     {
-        var discordLogSeverity = GetDiscordLogSeverity(builder.Configuration);
-        services.AddDiscordBotConfiguration(discordLogSeverity);
-        services.AddDiscordCommands(discordLogSeverity);
+        // The sequence of these calls is crucial due to assembly scanning, and they should be placed at the end.
+        services.AddDiscordBotConfiguration(builder.Configuration);
+        services.AddDiscordCommands(builder.Configuration);
     })
     .Build();
 
 await host.RunAsync();
-return;
-
-LogSeverity GetDiscordLogSeverity(IConfiguration configuration)
-{
-    return configuration.GetSection(BotConfiguration.SectionName)
-        .Get<BotConfiguration>()!.LogLevel;
-}

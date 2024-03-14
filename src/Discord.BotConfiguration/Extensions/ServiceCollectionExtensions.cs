@@ -1,5 +1,6 @@
 ﻿using Discord.BotConfiguration.Services;
 using Discord.WebSocket;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Discord.BotConfiguration.Extensions;
@@ -7,22 +8,23 @@ namespace Discord.BotConfiguration.Extensions;
 public static class ServiceCollectionExtensions
 {
     public static IServiceCollection AddDiscordBotConfiguration(this IServiceCollection services,
-        LogSeverity logSeverity)
+        IConfiguration configuration)
     {
         services.AddOptions<BotConfiguration>()
             .BindConfiguration(BotConfiguration.SectionName)
             .ValidateDataAnnotations()
             .ValidateOnStart();
 
-        services.AddDiscordSocketClient(logSeverity);
+        services.AddDiscordSocketClient(configuration);
         services.AddHostedService<DiscordBotStartupService>();
 
         return services;
     }
 
     private static IServiceCollection AddDiscordSocketClient(this IServiceCollection services,
-        LogSeverity logSeverity)
+        IConfiguration configuration)
     {
+        var logSeverity = LoggerExtensions.GetDiscordLogSeverity(configuration);
         var config = GetDiscordSocketConfig(logSeverity);
         services.AddSingleton(_ => new DiscordSocketClient(config));
 
@@ -33,7 +35,9 @@ public static class ServiceCollectionExtensions
     {
         return new DiscordSocketConfig
         {
-            GatewayIntents = GatewayIntents.AllUnprivileged,
+            // Make sure you set your intents according to your bot's needs.
+            // More about intents: https://discord.com/developers/docs/topics/gateway#gateway-intents
+            GatewayIntents = GatewayIntents.All,
             LogGatewayIntentWarnings = false,
             UseInteractionSnowflakeDate = false,
             AlwaysDownloadUsers = true,

@@ -1,14 +1,18 @@
-﻿using Discord.Commands.Services;
+﻿using Discord.BotConfiguration.Extensions;
+using Discord.Commands.Services;
 using Discord.Interactions;
 using Discord.WebSocket;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Discord.Commands.Extensions;
 
 public static class ServiceCollectionExtensions
 {
-    public static IServiceCollection AddDiscordCommands(this IServiceCollection services, LogSeverity logSeverity)
+    public static IServiceCollection AddDiscordCommands(this IServiceCollection services, IConfiguration configuration)
     {
+        var logSeverity = LoggerExtensions.GetDiscordLogSeverity(configuration);
+        
         services.AddDiscordInteractionService();
         services.AddDiscordCommandService(logSeverity);
         services.AddHostedService<InteractionHandlingService>();
