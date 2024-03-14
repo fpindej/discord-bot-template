@@ -30,14 +30,11 @@ public sealed class InteractionHandlingService : IHostedService
     {
         _client.Ready += () => _commands.RegisterCommandsGloballyAsync();
         _client.InteractionCreated += OnInteractionAsync;
-        
+
         _logger.LogInformation("Registering commands...");
         await _commands.AddModulesAsync(Assembly.GetExecutingAssembly(), _services);
 
         _commands.InteractionExecuted += InteractionExecutedAsync;
-        _commands.SlashCommandExecuted += SlashCommandExecutedAsync;
-        _commands.ContextCommandExecuted += ContextCommandExecutedAsync;
-        _commands.ComponentCommandExecuted += ComponentCommandExecutedAsync;
     }
 
 
@@ -70,35 +67,11 @@ public sealed class InteractionHandlingService : IHostedService
             throw;
         }
     }
-    
+
     private Task InteractionExecutedAsync(ICommandInfo commandInfo, IInteractionContext interactionContext,
         Interactions.IResult result)
     {
         _logger.LogInformation("Interaction command executed: {CommandName}. Server: {Server}. User: {User}",
-            commandInfo.Name, interactionContext.Guild?.Name, interactionContext.User?.Username);
-        return Task.CompletedTask;
-    }
-
-    private Task SlashCommandExecutedAsync(SlashCommandInfo commandInfo, IInteractionContext interactionContext,
-        Interactions.IResult result)
-    {
-        _logger.LogInformation("Slash command executed: {CommandName}. Server: {Server}. User: {User}",
-            commandInfo.Name, interactionContext.Guild?.Name, interactionContext.User?.Username);
-        return Task.CompletedTask;
-    }
-
-    private Task ComponentCommandExecutedAsync(ComponentCommandInfo commandInfo, IInteractionContext interactionContext,
-        Interactions.IResult result)
-    {
-        _logger.LogInformation("Component command executed: {CommandName}. Server: {Server}. User: {User}",
-            commandInfo.Name, interactionContext.Guild?.Name, interactionContext.User?.Username);
-        return Task.CompletedTask;
-    }
-
-    private Task ContextCommandExecutedAsync(ContextCommandInfo commandInfo, IInteractionContext interactionContext,
-        Interactions.IResult result)
-    {
-        _logger.LogInformation("Context command executed: {CommandName}. Server: {Server}. User: {User}",
             commandInfo.Name, interactionContext.Guild?.Name, interactionContext.User?.Username);
         return Task.CompletedTask;
     }
