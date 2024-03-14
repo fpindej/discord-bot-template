@@ -24,10 +24,3 @@ using var host = Host.CreateDefaultBuilder(args)
     .Build();
 
 await host.RunAsync();
-return;
-
-LogSeverity GetDiscordLogSeverity(IConfiguration configuration)
-{
-    return configuration.GetSection(BotConfiguration.SectionName)
-        .Get<BotConfiguration>()!.LogLevel;
-}
