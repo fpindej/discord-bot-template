@@ -4,21 +4,21 @@ using Discord.BotConfiguration.Extensions;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 
-using var host = Host.CreateDefaultBuilder(args)
-    .ConfigureSerilog()
-    .ConfigureAppConfiguration(config =>
-    {
-        var environmentName = Environment.GetEnvironmentVariable("DOTNET_ENVIRONMENT");
+var builder = Host.CreateDefaultBuilder(args);
 
-        config.AddJsonFile("appsettings.json", false, true);
-        config.AddJsonFile($"appsettings.{environmentName}.json", true, true);
-    })
-    .ConfigureServices((builder, services) =>
-    {
-        // The sequence of these calls is crucial due to assembly scanning, and they should be placed at the end.
-        services.AddDiscordBotConfiguration(builder.Configuration);
-        services.AddDiscordCommands(builder.Configuration);
-    })
-    .Build();
+builder.ConfigureSerilog();
+builder.ConfigureAppConfiguration(config =>
+{
+    var environmentName = Environment.GetEnvironmentVariable("DOTNET_ENVIRONMENT");
 
-await host.RunAsync();
+    config.AddJsonFile("appsettings.json", false, true);
+    config.AddJsonFile($"appsettings.{environmentName}.json", true, true);
+});
+builder.ConfigureServices((hostBuilder, services) =>
+{
+    // The sequence of these calls is crucial due to assembly scanning, and they should be placed at the end.
+    services.AddDiscordBotConfiguration(hostBuilder.Configuration);
+    services.AddDiscordCommands(hostBuilder.Configuration);
+});
+
+await builder.Build().RunAsync();
