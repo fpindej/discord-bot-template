@@ -1,6 +1,6 @@
-﻿using Discord.Commands.Extensions;
-using ConsoleApp.Extensions;
+﻿using ConsoleApp.Extensions;
 using Discord.BotConfiguration.Extensions;
+using Discord.Commands.Extensions;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 

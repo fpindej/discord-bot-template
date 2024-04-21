@@ -7,7 +7,7 @@ namespace Logging;
 public static class LogHelper
 {
     /// <summary>
-    /// Maps Discord.NET's LogSeverity to Serilog's LogEventLevel
+    ///     Maps Discord.NET's LogSeverity to Serilog's LogEventLevel
     /// </summary>
     /// <param name="message"></param>
     /// <returns></returns>

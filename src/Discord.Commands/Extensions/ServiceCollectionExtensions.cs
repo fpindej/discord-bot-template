@@ -12,7 +12,7 @@ public static class ServiceCollectionExtensions
     public static IServiceCollection AddDiscordCommands(this IServiceCollection services, IConfiguration configuration)
     {
         var logSeverity = LoggerExtensions.GetDiscordLogSeverity(configuration);
-        
+
         services.AddDiscordInteractionService();
         services.AddDiscordCommandService(logSeverity);
         services.AddHostedService<InteractionHandlingService>();

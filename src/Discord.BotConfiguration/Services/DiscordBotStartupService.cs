@@ -9,11 +9,11 @@ namespace Discord.BotConfiguration.Services;
 public sealed class DiscordBotStartupService : IHostedService
 {
     private readonly DiscordSocketClient _client;
-    private readonly ILogger<DiscordBotStartupService> _logger;
     private readonly string _clientToken;
+    private readonly ILogger<DiscordBotStartupService> _logger;
 
-    public DiscordBotStartupService(DiscordSocketClient client, ILogger<DiscordBotStartupService> logger,
-        IOptions<BotConfiguration> discordBotConfiguration)
+    public DiscordBotStartupService(DiscordSocketClient client, IOptions<BotConfiguration> discordBotConfiguration,
+        ILogger<DiscordBotStartupService> logger)
     {
         _client = client ?? throw new ArgumentNullException(nameof(client));
         _logger = logger ?? throw new ArgumentNullException(nameof(logger));
