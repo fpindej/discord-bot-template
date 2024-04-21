@@ -30,7 +30,7 @@ public static class ServiceCollectionExtensions
 
         return services;
     }
-    
+
     private static DiscordSocketConfig GetDiscordSocketConfig(LogSeverity logSeverity)
     {
         return new DiscordSocketConfig

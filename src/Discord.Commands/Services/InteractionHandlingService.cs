@@ -11,8 +11,8 @@ public sealed class InteractionHandlingService : IHostedService
 {
     private readonly DiscordSocketClient _client;
     private readonly InteractionService _commands;
-    private readonly IServiceProvider _services;
     private readonly ILogger<InteractionHandlingService> _logger;
+    private readonly IServiceProvider _services;
 
     public InteractionHandlingService(IServiceProvider services, DiscordSocketClient client,
         InteractionService commands,
@@ -62,7 +62,9 @@ public sealed class InteractionHandlingService : IHostedService
             _logger.LogError(e, "Error handling interaction.");
 
             if (interaction.Type is InteractionType.ApplicationCommand)
+            {
                 await interaction.GetOriginalResponseAsync().ContinueWith(async msg => await msg.Result.DeleteAsync());
+            }
 
             throw;
         }
