@@ -30,6 +30,7 @@ dotnet_style_require_accessibility_modifiers = for_non_interface_members:suggest
 
 # ReSharper properties
 resharper_blank_lines_before_block_statements = 1
+resharper_braces_for_foreach = required
 resharper_braces_for_ifelse = required
 resharper_instance_members_qualify_declared_in =
 resharper_place_accessorholder_attribute_on_same_line = false
