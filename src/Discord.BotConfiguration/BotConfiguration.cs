@@ -7,7 +7,7 @@ public sealed class BotConfiguration
     public const string SectionName = "DiscordBotConfiguration";
 
     [Required]
-    public string Token { get; init; } = null!;
+    public required string Token { get; init; }
 
     public LogSeverity LogLevel { get; init; } = LogSeverity.Info;
 }
