@@ -1,8 +1,17 @@
 version: 2
+
+registries:
+  public:
+    type: nuget-feed
+    url: https://api.nuget.org/v3/index.json
+
 updates:
   - package-ecosystem: "nuget"
+    registries:
+      - public
     directory: "/"
     schedule:
       interval: "weekly"
-      day: "tuesday"
+      day: "monday"
+    target-branch: "master"
     open-pull-requests-limit: 10
