@@ -1,7 +1,6 @@
-﻿using System.Reflection;
+﻿using Discord.BotConfiguration.Extensions;
 using Discord.Interactions;
 using Discord.WebSocket;
-using Logging;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
@@ -23,7 +22,7 @@ public sealed class InteractionHandlingService : IHostedService
         _commands = commands ?? throw new ArgumentNullException(nameof(commands));
         _logger = logger ?? throw new ArgumentNullException(nameof(logger));
 
-        _commands.Log += LogHelper.LogAsync;
+        _commands.Log += LoggerHelper.LogAsync;
     }
 
     public async Task StartAsync(CancellationToken cancellationToken)

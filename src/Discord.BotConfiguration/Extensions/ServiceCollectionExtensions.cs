@@ -24,7 +24,7 @@ public static class ServiceCollectionExtensions
     private static IServiceCollection AddDiscordSocketClient(this IServiceCollection services,
         IConfiguration configuration)
     {
-        var logSeverity = LoggerExtensions.GetDiscordLogSeverity(configuration);
+        var logSeverity = LoggerHelper.GetDiscordLogSeverity(configuration);
         var config = GetDiscordSocketConfig(logSeverity);
         services.AddSingleton(_ => new DiscordSocketClient(config));
 
