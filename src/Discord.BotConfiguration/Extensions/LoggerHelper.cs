@@ -4,7 +4,7 @@ using Serilog.Events;
 
 namespace Discord.BotConfiguration.Extensions;
 
-public static class LoggerExtensions
+public static class LoggerHelper
 {
     public static LogSeverity GetDiscordLogSeverity(IConfiguration configuration)
     {
