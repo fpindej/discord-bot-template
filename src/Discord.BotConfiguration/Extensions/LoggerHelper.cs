@@ -11,7 +11,7 @@ public static class LoggerHelper
         return configuration.GetSection(BotConfiguration.SectionName)
             .Get<BotConfiguration>()!.LogLevel;
     }
-    
+
     /// <summary>
     ///     Maps Discord.NET's LogSeverity to Serilog's LogEventLevel
     /// </summary>
