@@ -1,5 +1,5 @@
-﻿using Discord.WebSocket;
-using Logging;
+﻿using Discord.BotConfiguration.Extensions;
+using Discord.WebSocket;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
@@ -20,7 +20,7 @@ public sealed class DiscordBotStartupService : IHostedService
         _clientToken = discordBotConfiguration.Value.Token ??
                        throw new ArgumentNullException(nameof(discordBotConfiguration.Value.Token));
 
-        _client.Log += LogHelper.LogAsync;
+        _client.Log += LoggerHelper.LogAsync;
     }
 
     public async Task StartAsync(CancellationToken cancellationToken)
