@@ -15,7 +15,6 @@
 
 	<ItemGroup>
 		<ProjectReference Include="..\Discord.BotConfiguration\Discord.BotConfiguration.csproj"/>
-		<ProjectReference Include="..\Logging\Logging.csproj"/>
 	</ItemGroup>
 
 </Project>
