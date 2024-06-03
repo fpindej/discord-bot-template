@@ -10,7 +10,7 @@
 
 	<ItemGroup>
 		<None Update="appsettings.json" CopyToPublishDirectory="Always" CopyToOutputDirectory="Always"/>
-		<None Update="appsettings.*.json" CopyToPublishDirectory="Never" CopyToOutputDirectory="Never"/>
+		<None Update="appsettings.*.json" CopyToPublishDirectory="Never" CopyToOutputDirectory="PreserveNewest"/>
 	</ItemGroup>
 
 	<ItemGroup>
