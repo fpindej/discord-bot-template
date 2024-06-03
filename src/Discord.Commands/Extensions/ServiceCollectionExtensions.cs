@@ -11,10 +11,8 @@ public static class ServiceCollectionExtensions
 {
     public static IServiceCollection AddDiscordCommands(this IServiceCollection services, IConfiguration configuration)
     {
-        var logSeverity = LoggerHelper.GetDiscordLogSeverity(configuration);
-
         services.AddDiscordInteractionService();
-        services.AddDiscordCommandService(logSeverity);
+        services.AddDiscordCommandService(configuration);
         services.AddHostedService<InteractionHandlingService>();
 
         return services;
@@ -32,16 +30,18 @@ public static class ServiceCollectionExtensions
     }
 
     private static IServiceCollection AddDiscordCommandService(this IServiceCollection services,
-        LogSeverity logSeverity)
+        IConfiguration configuration)
     {
-        var config = GetCommandServiceConfig(logSeverity);
+        var config = GetCommandServiceConfig(configuration);
         services.AddSingleton(_ => new CommandService(config));
 
         return services;
     }
 
-    private static CommandServiceConfig GetCommandServiceConfig(LogSeverity logSeverity)
+    private static CommandServiceConfig GetCommandServiceConfig(IConfiguration configuration)
     {
+        var logSeverity = LoggerHelper.GetDiscordLogSeverity(configuration);
+
         return new CommandServiceConfig
         {
             DefaultRunMode = RunMode.Async,
