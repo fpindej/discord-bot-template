@@ -41,7 +41,7 @@ public static class ServiceCollectionExtensions
     private static CommandServiceConfig GetCommandServiceConfig(IConfiguration configuration)
     {
         var logSeverity = LoggerHelper.GetDiscordLogSeverity(configuration);
-        
+
         return new CommandServiceConfig
         {
             DefaultRunMode = RunMode.Async,
